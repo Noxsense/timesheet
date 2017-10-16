@@ -152,7 +152,8 @@ public class TimeEntryEditActivity extends Activity {
     private TimePickerDialog.OnTimeSetListener m_start_time_listener =
         new TimePickerDialog.OnTimeSetListener() {
             public void onTimeSet(TimePicker view, int hour, int minute) {
-                m_data.set_start_time(hour, minute);
+				view.clearFocus();
+                m_data.set_start_time(view.getCurrentHour(), view.getCurrentMinute());
                 updateDisplay();
             }
         };
@@ -160,7 +161,8 @@ public class TimeEntryEditActivity extends Activity {
     private TimePickerDialog.OnTimeSetListener m_end_time_listener =
         new TimePickerDialog.OnTimeSetListener() {
             public void onTimeSet(TimePicker view, int hour, int minute) {
-                m_data.set_end_time(hour, minute);
+				view.clearFocus();
+                m_data.set_end_time(view.getCurrentHour(), view.getCurrentMinute());
                 updateDisplay();
             }
         };
